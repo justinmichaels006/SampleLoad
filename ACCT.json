@@ -1,0 +1,103 @@
+{
+  "ACCT_Account1": "CUST_id:UUID",
+  "ACCT_Account2": "CUST_id:UUID",
+  "ACCT_Account3": "CUST_id:UUID",
+  "ACCT_Account1::Balance": 999999,
+  "ACCT_Account2::Balance": 999999,
+  "ACCT_Account3::Balance": 999999,
+  "ACCT_element5": 1335348000000,
+  "ACCT_element6": false,
+  "ACCT_element7": 0,
+  "ACCT_element8": 0,
+  "ACCT_element9": 0,
+  "ACCT_element10": [
+    "Local Channels"
+  ],
+  "ACCT_element11": 1000,
+  "ACCT_element12": "1000_1335348000000",
+  "ACCT_element13": 0,
+  "ACCT_element14": [
+    {
+      "ACCT_element14_1": 1000,
+      "ACCT_element14_2": "PAD_1000_2012-04-25 10:00:00.000",
+      "ACCT_element14_3": 2147483647000,
+      "ACCT_element14_4": "01432E00002020202020202003001E001F002000013401412438030800DF38030B020C25040362450098032AF8FF",
+      "ACCT_element14_5": 1335348000000
+    }
+  ],
+  "ACCT_element15": [
+    {
+      "ACCT_element15_1": 2147483647000,
+      "ACCT_element15_2": 25157,
+      "ACCT_element15_3": 1335348000000
+    }
+  ],
+  "ACCT_element16": "SLL",
+  "ACCT_element17": "M2",
+  "ACCT_element18": 886,
+  "ACCT_element19": null,
+  "ACCT_element20": 0,
+  "ACCT_element21": null,
+  "ACCT_element22": false,
+  "ACCT_element23": false,
+  "ACCT_element24": "from  New York, NY",
+  "ACCT_element25": "0",
+  "ACCT_element26": 0,
+  "ACCT_element27": false,
+  "ACCT_element28": 0,
+  "ACCT_element29": 2147483647000,
+  "ACCT_element30": 0,
+  "ACCT_element31": 0,
+  "ACCT_element32": null,
+  "ACCT_element33": true,
+  "ACCT_element34": false,
+  "ACCT_element35": false,
+  "ACCT_element36": null,
+  "ACCT_element37": null,
+  "ACCT_element38": "N",
+  "ACCT_element39": 22,
+  "ACCT_element40": "New York WNET 13 PBS",
+  "ACCT_element41": 13,
+  "ACCT_element42": 501,
+  "ACCT_element43": null,
+  "ACCT_element44": null,
+  "ACCT_element45": [
+    "PBS"
+  ],
+  "ACCT_element46": null,
+  "ACCT_element47": null,
+  "ACCT_element48": false,
+  "ACCT_element49": false,
+  "ACCT_element50": false,
+  "ACCT_element51": 0,
+  "ACCT_element52": false,
+  "ACCT_element53": null,
+  "ACCT_element54": null,
+  "ACCT_element55": " Digital",
+  "ACCT_element56": 64,
+  "ACCT_element57": "WNET",
+  "ACCT_element58": 11715,
+  "ACCT_element59": 11715,
+  "ACCT_element60": [
+    11039
+  ],
+  "ACCT_element61": [
+    "ACCT_element61_1:ny13.ch"
+  ],
+  "ACCT_element62": [
+    {
+      "ACCT_element62_1": 79040,
+      "ACCT_element62_2": "PBS",
+      "ACCT_element62_3": null,
+      "ACCT_element62_4": "Grouping",
+      "ACCT_element62_5": 79040,
+      "ACCT_element62_6": null,
+      "ACCT_element62_7": 22
+    }
+  ],
+  "ACCT_element63": false,
+  "ACCT_element64": null,
+  "ACCT_element65": false,
+  "ACCT_element66": "2015082007:25:05.486",
+  "ACCT_element67": "ChDao_"
+}
