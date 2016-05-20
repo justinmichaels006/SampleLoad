@@ -14,7 +14,7 @@ import java.io.IOException;
  */
 public class LoadMe5 {
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) throws Exception {
 
         CouchbaseCluster cluster = CouchbaseCluster.create("192.168.61.101");
         final Bucket bucket = cluster.openBucket("testload");
@@ -24,7 +24,7 @@ public class LoadMe5 {
         CouchbaseEventDaoImpl cb = CouchbaseEventDaoImpl.getInstance();
 
         for (int i = 0; i < numDocs; i++) {
-            cb.insertEvent(jsonObject, "cl1", 0);
+            cb.insertEventAsyncRepl(jsonObject, "cl1", 0);
         }
 
     }
