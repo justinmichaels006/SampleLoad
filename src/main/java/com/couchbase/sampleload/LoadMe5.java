@@ -18,7 +18,7 @@ public class LoadMe5 {
 
         CouchbaseCluster cluster = CouchbaseCluster.create("192.168.61.101");
         final Bucket bucket = cluster.openBucket("testload");
-        int numDocs = 10000;
+        int numDocs = 5000;
 
         JsonObject jsonObject = (JsonObject) bucket.get("CONT").content();
         CouchbaseEventDaoImpl cb = CouchbaseEventDaoImpl.getInstance();

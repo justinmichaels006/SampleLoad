@@ -1,6 +1,7 @@
 package com.couchbase.sampleload;
 
 import com.couchbase.client.core.BackpressureException;
+import com.couchbase.client.core.annotations.InterfaceAudience;
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.CouchbaseCluster;
 import com.couchbase.client.java.ReplicaMode;
@@ -8,6 +9,7 @@ import com.couchbase.client.java.document.AbstractDocument;
 import com.couchbase.client.java.document.JsonDocument;
 import com.couchbase.client.java.document.RawJsonDocument;
 import com.couchbase.client.java.document.StringDocument;
+import com.couchbase.client.java.document.json.JsonArray;
 import com.couchbase.client.java.document.json.JsonObject;
 import com.couchbase.client.java.env.CouchbaseEnvironment;
 import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
@@ -25,12 +27,16 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 /**
  * Created by justin on 3/4/16.
  */
 public class TestBed {
+
+    private ArrayList<JsonDocument> docs;
 
     public static void main(String[] args) throws IOException, ParseException {
 
@@ -139,7 +145,7 @@ public class TestBed {
                                 }
                             }
                         })
-                .last().toBlocking().single();
+                .subscribe(document1 -> System.out.println("Got: " + document1.id()));
 
         // New
         // Method to create JsonDocument Observable. Notice that the call to Couchbase bucket is in Sync

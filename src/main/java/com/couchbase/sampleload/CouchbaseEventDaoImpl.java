@@ -14,6 +14,7 @@ import com.couchbase.client.java.document.json.JsonObject;
 import com.couchbase.client.java.env.CouchbaseEnvironment;
 import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
 import com.couchbase.client.java.error.DocumentDoesNotExistException;
+import com.sun.xml.internal.ws.util.StringUtils;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Action1;

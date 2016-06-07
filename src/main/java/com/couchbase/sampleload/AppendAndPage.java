@@ -32,10 +32,7 @@ import javax.management.Query;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -52,8 +49,8 @@ public class AppendAndPage {
                 .dnsSrvEnabled(false)
                 //.observeIntervalDelay()
                 .build();
-        CouchbaseCluster cluster = CouchbaseCluster.create(env, "192.168.61.101");
-        Bucket bucket = cluster.openBucket("testload");
+        CouchbaseCluster cluster = CouchbaseCluster.create(env, "192.168.61.101", "192.168.61.102");
+        Bucket bucket = cluster.openBucket("travel-sample");
 
         // A single GUID would capture an array of events.
         // Each event_id would represent a unique document in the bucket.
@@ -69,9 +66,17 @@ public class AppendAndPage {
                 .from("testload")
                 .where("WAL_PROV = 'KY' OR PROC_NM = 'WAY'")
                 .limit(20);
-        //.offset(20);
+                //.offset(20);
+
+        Statement selectstmt2 = select("r.id, a.name, s.flight, s.utc, r.sourceairport, r.destinationairport, r.equipment")
+                .from("`travel-sample` r")
+                .unnest("r.schedule s")
+                .join("`travel-sample` a")
+                .onKeys("r.airlineid")
+                .where("r.sourceairport='LAX' AND r.destinationairport='SFO' AND s.day=3");
+
         N1qlParams ryow = N1qlParams.build().consistency(ScanConsistency.NOT_BOUNDED);
-        N1qlQueryResult q = bucket.query(N1qlQuery.simple(selectstmt, ryow));
+        N1qlQueryResult q = bucket.query(N1qlQuery.simple(selectstmt2, ryow));
 
         int aNum = q.info().resultCount();
         int pageSize = 5;
@@ -96,10 +101,12 @@ public class AppendAndPage {
 
         bucket.query(N1qlQuery.simple(select("Name", "SUM(Count)").from("default").groupBy("Name")))
                 .forEach(System.out::println);
+
         //Some other options
         //Iterator<N1qlQueryRow> listIterate = q.rows(); ... System.out.println(listIterate.next());
         //System.out.println(listString.get(i));
         //System.out.println(listString.stream().skip(z).limit(w).collect(Collectors.toCollection(ArrayList::new)));
+
 
     }
 }
