@@ -168,7 +168,6 @@ public class CouchbaseEventDaoImpl2 {
                     }
                 });
 
-    //Observable.merge(obsrv1, obsrv2, obsrv3).toBlocking().subscribe(document1 -> System.out.println("Got: " + document1.id()));
     Observable.merge(obsrv1, obsrv2, obsrv3).toBlocking().subscribe(document1 -> System.out.println("Got: " + document1.id()));
     }
 }
