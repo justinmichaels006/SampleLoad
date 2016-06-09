@@ -18,13 +18,15 @@ public class LoadMe5 {
 
         CouchbaseCluster cluster = CouchbaseCluster.create("192.168.61.101");
         final Bucket bucket = cluster.openBucket("testload");
-        int numDocs = 5000;
-
         JsonObject jsonObject = (JsonObject) bucket.get("CONT").content();
-        CouchbaseEventDaoImpl cb = CouchbaseEventDaoImpl.getInstance();
+        bucket.close();
+        cluster.disconnect();
+
+        int numDocs = 5000;
+        CouchbaseEventDaoImpl2 cb = CouchbaseEventDaoImpl2.getInstance();
 
         for (int i = 0; i < numDocs; i++) {
-            cb.insertEventAsyncRepl(jsonObject, "cl1", 0);
+            cb.insertEvent(jsonObject, "cl1", 0);
         }
 
     }
