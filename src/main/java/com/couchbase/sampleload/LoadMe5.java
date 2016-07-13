@@ -23,10 +23,10 @@ public class LoadMe5 {
         cluster.disconnect();
 
         int numDocs = 5000;
-        CouchbaseEventDaoImpl2 cb = CouchbaseEventDaoImpl2.getInstance();
+        CouchbaseEventDaoImpl8 cb = CouchbaseEventDaoImpl8.getInstance();
 
         for (int i = 0; i < numDocs; i++) {
-            cb.insertEvent(jsonObject, "cl1", 0);
+            cb.insertEvent(jsonObject, "cl1", 0, true, true);
         }
 
     }
